@@ -39,8 +39,7 @@ into the {body} of the default.hbs template --}}
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
+                <h3 class="subscribe-form-title">{{@blog.title}} Takip et!</h3>
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
@@ -58,12 +57,12 @@ into the {body} of the default.hbs template --}}
                         {{#if bio}}
                             <p>{{bio}}</p>
                         {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                            <p>Bu yazarın <a href="{{url}}">diğer yazıları</a>.</p>
                         {{/if}}
                     </section>
                 </section>
                 <div class="post-full-footer-right">
-                    <a class="author-card-button" href="{{url}}">Read More</a>
+                    <a class="author-card-button" href="{{url}}">Daha fazlası</a>
                 </div>
 
                 {{/author}}
@@ -127,7 +126,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Yazı yok' singular='Bir yazı' plural='Tamamını oku'}} →</a>
                     </footer>
                 </article>
                 {{/if}}

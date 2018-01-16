@@ -62,7 +62,7 @@ into the {body} of the default.hbs template --}}
                     </section>
                 </section>
                 <div class="post-full-footer-right">
-                    <a class="author-card-button" href="{{url}}">Daha fazlası</a>
+                    <a class="author-card-button" href="{{url}}">Diğer yazıları</a>
                 </div>
 
                 {{/author}}
@@ -126,7 +126,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Yazı yok' singular='Bir yazı' plural='Tamamını oku'}} →</a>
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='Bu konuda başka yazı yok' singular='Bu konudaki diğer yazı' plural='Bu konudaki diğer yazılar'}} →</a>
                     </footer>
                 </article>
                 {{/if}}

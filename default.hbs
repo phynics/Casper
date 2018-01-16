@@ -30,7 +30,7 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{@blog.url}}">Latest Posts</a>
+                    <a href="{{@blog.url}}">Son yazılar</a>
                     {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
                     {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
@@ -74,6 +74,20 @@
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/tr.js"></script>  
+    <script type="text/javascript">  
+        $(document).ready(function () {
+            moment.locale('tr');
+            $('.post-full-meta-date').each(function (i, date) {
+            var $date = $(date);
 
+                $date.html(
+                moment($date.attr('datetime'))
+                .format('LL')
+                    );
+            });
+        });
+    </script> 
 </body>
 </html>
